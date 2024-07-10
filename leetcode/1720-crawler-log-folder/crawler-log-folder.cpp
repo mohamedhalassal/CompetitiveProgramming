@@ -1,18 +1,16 @@
 class Solution {
 public:
     int minOperations(vector<string>& logs) {
-        stack<string> st;
+        int n = 0;
         for (int i = 0; i < logs.size(); i++) {
-            if(logs[i]=="../"){
-                if(!empty(st))st.pop();
-            }
-            else if(logs[i]=="./"){
+            if (logs[i] == "../") {
+               if(n>0) n--;
+            } else if (logs[i] == "./") {
                 continue;
-            }
-            else {
-                st.push(logs[i]);
+            } else {
+                n++;
             }
         }
-        return st.size();
+        return n;
     }
 };
