@@ -1,8 +1,8 @@
 class Solution {
 public:
     void reverseString(vector<char>& s) {
-        reverse(s.begin(),s.end());
-        for(int i=0;i<s.size();i++)
-        cout<<s[i];
+        int start = 0, end = s.size() - 1;
+        while (start < end)
+            swap(s[start++], s[end--]);
     }
 };
