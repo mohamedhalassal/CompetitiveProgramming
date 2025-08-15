@@ -1,17 +1,17 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        map<int,int>mp;
-        for(int i=0;i<nums.size();i++){
-            mp[nums[i]]++;
-        }
-        int mx=0,tec=-1;
-        for(auto [key,val]:mp){
-            if(tec<=val){
-                tec=val;
-                mx=key;
+        int can = 0, coun = 0;
+        for (auto num : nums) {
+            if (coun == 0) {
+                can = num;
+                coun++;
             }
+            else if (can == num)
+                coun++;
+            else
+                coun--;
         }
-        return mx;
+        return can;
     }
 };
