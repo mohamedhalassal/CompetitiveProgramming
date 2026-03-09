@@ -8,7 +8,7 @@ public:
         for (int i = 0; i < spells.size(); i++) {
             // i going to search to the the position of firs number is \leq the
             // success
-            int l = 0, r = psz - 1, mid, an = -1;
+            int l = 0, r = psz - 1, mid, an = psz;
             while (l <= r) {
                 mid = (l + r) / 2;
                 if ((long long)spells[i] * potions[mid] >= success) {
@@ -18,7 +18,7 @@ public:
                     l = mid + 1;
                 }
             }
-            ans.push_back((an == -1) ? 0 : psz - an);
+            ans.push_back( psz - an);
         }
         return ans;
     }
