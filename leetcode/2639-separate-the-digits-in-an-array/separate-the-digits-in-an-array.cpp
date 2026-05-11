@@ -3,10 +3,10 @@ public:
     vector<int> separateDigits(vector<int>& nums) {
         string s;
         vector<int> ans;
-        for (int i = 0; i < nums.size(); i++) {
-            s = to_string(nums[i]);
-            for (int j = 0; j < s.size(); j++) {
-                ans.push_back(s[j] - '0');
+        for (auto &it : nums ) {
+            s = to_string(it);
+            for (auto &st : s ) {
+                ans.push_back(st - '0');
             }
         }
         return ans;
